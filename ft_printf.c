@@ -6,7 +6,7 @@
 /*   By: aizsak <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 08:35:02 by aizsak            #+#    #+#             */
-/*   Updated: 2022/11/13 17:49:37 by aizsak           ###   ########.fr       */
+/*   Updated: 2022/11/17 09:56:21 by aizsak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,14 @@ int	ft_type(va_list ap, const char type)
 		i += ft_pstr(va_arg(ap, const char *));
 	else if (type == 'p')
 		i += //fonction arg void* aff en hexa
-	else if (type == 'd')
-		i += //fonction putnbr sur un decimal peut etre negatif
-	else if (type == 'i')
+	else if (type == 'd' || type == 'i')
 		i += ft_pnbr(va_argv(ap, int));
 	else if (type == 'u')
-		i += //fonction putnb decimal unsigned
+		i += ft_pnbr_unsigned(va_argv(ap, unsigned int));
 	else if (type == 'x')
-		i += //fonction aff hexa & miniscule lettre
+		i += ft_phexa(va_argv(ap, unsigned int), 'x');
 	else if (type == 'X')
-		i += //fonction aff hexa & lettre majuscule
+		i += ft_phexa(va_argv(ap, unsigned int), 'X');
 	else if (type == '%')
 		i += ft_p%();
 	return (i);
