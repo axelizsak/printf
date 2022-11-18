@@ -6,7 +6,7 @@
 /*   By: aizsak <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 08:35:02 by aizsak            #+#    #+#             */
-/*   Updated: 2022/11/17 09:56:21 by aizsak           ###   ########.fr       */
+/*   Updated: 2022/11/18 21:26:34 by aizsak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ int	ft_type(va_list ap, const char type)
 	else if (type == 's')
 		i += ft_pstr(va_arg(ap, const char *));
 	else if (type == 'p')
-	{
-		ft_pstr("0x");
-		i += 2;
-		i += ft_phexa(va_arg(ap, unsigned long), 'x');
-	}
+		i += ft_pptr(va_arg(ap, unsigned long));
 	else if (type == 'd' || type == 'i')
 		i += ft_pnbr(va_arg(ap, int));
 	else if (type == 'u')
@@ -43,8 +39,8 @@ int	ft_type(va_list ap, const char type)
 int	ft_printf(const char *s, ...)
 {
 	va_list	ap;
-	int	i;
-	int	print;
+	int		i;
+	int		print;
 
 	va_start(ap, s);
 	i = 0;

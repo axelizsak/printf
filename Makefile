@@ -6,7 +6,7 @@
 #    By: aizsak <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 11:49:45 by aizsak            #+#    #+#              #
-#    Updated: 2022/11/12 11:42:38 by aizsak           ###   ########.fr        #
+#    Updated: 2022/11/18 21:01:00 by aizsak           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DIRLIB		= ./libft/
 
 DIROBJ		= ./objs/
 
-SRC			= ft_printf ft_pchar ft_pstr ft_pnbr ft_ppercent ft_phexa ft_pnbr_unsigned
+SRC			= ft_printf ft_pchar ft_pstr ft_pnbr ft_ppercent ft_phexa ft_pnbr_unsigned ft_pptr
 
 SRCS		= $(addprefix ${DIRSRC}, $(addsuffix .c, ${SRC}))
 

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pnbr.c                                          :+:      :+:    :+:   */
+/*   ft_pptr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aizsak <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 10:48:05 by aizsak            #+#    #+#             */
-/*   Updated: 2022/11/18 21:25:51 by aizsak           ###   ########.fr       */
+/*   Created: 2022/11/18 20:50:54 by aizsak            #+#    #+#             */
+/*   Updated: 2022/11/18 21:24:44 by aizsak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_pnbr(int n)
+unsigned long	ft_pptr(unsigned long n)
 {
-	long	ln;
-	int		i;
+	int	i;
 
 	i = 0;
-	ln = n;
-	if (ln < 0)
-	{
-		i += ft_pchar('-');
-		ln *= -1;
-	}
-	if (ln <= 9)
-		i += ft_pchar(ln + '0');
+	if (n == 0)
+		i += ft_pstr ("(nil)");
 	else
 	{
-		i += ft_pnbr(ln / 10);
-		i += ft_pnbr(ln % 10);
+		i += ft_pstr("0x");
+		i += ft_phexa(n, 'x');
 	}
 	return (i);
 }
